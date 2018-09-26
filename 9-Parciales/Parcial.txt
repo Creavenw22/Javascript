@@ -1,0 +1,301 @@
+
+Nivel 1  (entrada y salida de datos)
+
+    Primera instancia: 
+    1-realizar el algoritmo que lea la base por ID de un cuadrado e informar el perímetro del mismo por alert 
+
+{
+        var base;
+        var perimetro;
+
+        base = parseInt(document.getElementById("IDHTML").value);
+
+        perimetro = base*4;
+
+        alert("El perimetro del cuadrado es "+ perimetro)
+
+
+
+}
+
+    Segunda instancia:
+    2-realiazar el algoritmo que lea un importe por de un producto por prompt y muestre el importe final
+sumándole el IVA (21%).
+
+{
+
+        var prod;
+        var final;
+
+        prod = parseInt(prompt("Ingrese el precio del producto"));
+
+        final = prod * 1.21;
+
+        alert("El importe es " + final);
+
+
+}
+
+    Tercera instancia:
+    3- realizar el algoritmo que tome por ID dos datos, el largo y ancho de un terreno y luego que muestre
+cuantos metros de alambre se necesitan para colocarle 3 hilos de alambrado a su perímetro.
+
+
+{
+
+        var largo;
+        var ancho;
+        var perimetro;
+        var metros;
+
+        largo = parseInt(document.getElementById("Largo").value);
+        ancho = parseInt(document.getElementById("Ancho").value);
+
+        perimetro = (largo * 2) + (ancho * 2);
+
+        metros = perimetro*3;
+
+        alert("La cantidad de metros de alambre necesario es: " + metros)
+
+}
+
+
+Nivel 2 (Instruccion IF & SWITCH)
+
+    Cuarta Instancia:
+    4- (IF) realizar el algoritmo que pida dos números por prompt, si son iguales que los multiplique, si el
+primero es mayor al segundo que los reste y si no que los sume, mostrar el resultado por document.write
+
+{
+        var num1 = parseInt(prompt("Ingrese un numero"));
+        var num2 = parseInt(prompt("Ingrese otro numero"));
+        var resul;
+
+        if ( num1 == num2) 
+        
+            {
+                resul = num1*num2;
+                document.write("El producto de los numeros es: " + resul);
+            }      
+
+        else if ( num1 > num2 )
+
+            {
+                resul = num1 - num2;
+                documnt.write("La resta de los numeros es: " + resul);
+            }
+
+        else
+
+            {
+                resul = num1 + num2;
+                document.write("La suma de los numeros es: " + resul);
+            }
+
+
+}
+
+    
+    Quinta Instancia:
+    5- (SWITCH)realizar el algoritmo que pida un día de la semana por prompt, si es un “Sábado” o “Domingo”
+informar por alert “es fin de semana” de lo contrario informar por alert “a trabajar !!!” .
+
+{
+        var dia;
+
+        dia = prompt("Ingrese dia: ");
+
+        switch  
+
+        {
+            case "sabado":
+            case "domingo":
+
+                    alert("Es fin de semanaaa!!1");
+                    break;
+
+            default: alert("A laburar gato");
+            break;
+        }
+
+}
+
+
+Nivel 4 (Iteraciones)
+
+    Sexta Instancia: 
+    6- realizar el algoritmo que pida el importe de las ventas (validar que sea mayor a 0,”cero”) de los 24 días
+hábiles del mes por prompt (una por día), e informar cual fue el mayor importe y cuál fue el menor
+importe de venta.
+
+{
+    var num;
+    var cont = 0;
+    var max;
+    car min;
+    var flag = true;
+
+    while (cont <= 24)
+        {
+
+    num = parseInt(prompt(Ingrese el importe del dia: ));
+
+        while ( num > 0 )
+            {
+                if (flag)
+                    {
+                        max = min = num;
+                        flag = false;
+                    }
+                
+                if (num < min)
+                    {
+                        min = num;
+                    }
+                
+                if (num > max)
+                    {
+                        max = num;
+                    }
+
+                cont++;
+            }
+            }
+        document.write("El dia de mayor recaudacion fue: " + max + </br> 
+                        "El dia de menor recaudacion fue: " + min);
+
+}
+
+    Septima instancia:
+    7- realizar el algoritmo que permita el ingreso por prompt de las notas (validar entre 0 y 10) y el sexo
+(validar el sexo “f” o “m”) de 100 alumnos, informar por alert:
+a) el promedio de las notas totales.
+b) la nota más baja.
+c) la cantidad de varones que su nota haya sido mayor o igual a 6.
+
+
+{
+        var nota;
+        var sumaN = 0;
+        var cont = 0;
+        var promedio;
+        var sexo;
+        var contV = 0;
+        var min;
+        var flag = true;
+        
+        
+
+            while (cont <= 100)
+
+                {
+                   
+                   nota = parseInt(prompt("Ingrese la nota del estudiante: "));
+
+                        while (nota < 0 || nota > 10)
+                            {
+                                nota = prompt("ERROR. Reingrese nota: ");
+                            }
+
+                    sexo = prompt("Indique sexo (F o M) ");
+                    sexo = sexo.toUpperCase();
+                        
+                        while (sexo !=  "F" || "M")
+                            {
+                                sexo = prompt("ERROR. Reingrese sexo: ");
+                                sexo = sexo.toUpperCase();
+                            }
+
+                        if (sexo == "M" && nota >= 6)
+                            {
+                                contV++
+                            }
+
+                        if (flag)
+                            {
+                                min = nota
+                                flag = false
+                            }
+                        
+                        if ( nota < min)
+                            {
+                                min = nota
+                            }
+                        
+                        SumaN = SumaN + nota
+                        cont++
+                    }
+        
+
+            promedio = SumaN/cont
+
+
+            alert("El promedio de las notas totales es: " + promedio + " La nota mas baja fue: " + min + " La cantidad de varones con nota mayor o igual a 6 son: " + contV)
+
+
+}
+
+
+    Nivel 4: Octava instancia:
+    8- realizar el algoritmo que permita ingresar números positivos (validar que sea positivo) hasta que el
+usuario quiera e informar al terminar el ingreso por document.write:
+a) la cantidad de números pares.
+b) el promedio de todos los números ingresados.
+c) la suma de todos los números.
+d) El número máximo y el mínimo.
+
+{
+
+    var num;
+    var cont=0;
+    var contNP=0;
+    var total=0;
+    var max;
+    var min;
+    var prom;
+    var flag;
+    
+    do {
+		num = parseInt(prompt("Ingrese un numero: "))
+
+		while (num < 0) {
+			num = parseInt(prompt("Ingrese un numero positivo, por favor: "));
+		}
+
+		if (flag) 
+            {
+			    max = min = num;
+                flag = false
+		    }
+
+		if (num > max) 
+            {
+			    max = num;
+		    }
+
+	    if (num < min)
+            {
+		    	min = num;
+		    }
+		
+
+		if (num % 2 == 0) 
+            {
+			    contadorNP++;
+	    	}
+
+            total = total + num
+            cont++
+
+	} while (confirm("¿Desea continuar?"))
+
+    prom = total / cont
+
+
+    document.write("La cantidad de numeros pares es: " + contadorNP + <br/>
+                    "La suma de todos los numeros es: " + total + <br/>
+                    "El promedio de todos los numero es: " + prom + <br/>
+                    "Numero maximo: " + max + <br/>
+                    "Numero minimo: " + min + <br/>)
+
+}
